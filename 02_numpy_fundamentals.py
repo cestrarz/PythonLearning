@@ -17,6 +17,8 @@ Why NumPy?
 - Vectorized operations (no explicit loops needed)
 """
 
+# change test for git
+
 import numpy as np
 print(f"NumPy version: {np.__version__}")
 
