@@ -43,3 +43,13 @@ A virtual environment is an isolated environment that allows you to manage depen
   ```bash
   pip install -r requirements.txt
   ```
+
+## Packages installed in this directory
+```bash
+pip install requests
+pip install numpy
+pip install pandas
+pip install seaborn
+pip install matplotlib
+pip install scipy
+```

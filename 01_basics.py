@@ -1,4 +1,4 @@
-# Python Basics for Data Analysis
+# Python Basics
 # This file contains fundamental Python concepts you'll need for data analysis
 
 # =============================================================================
@@ -41,8 +41,6 @@ print()
 # 2. BASIC OPERATIONS
 # =============================================================================
 
-print("=== Basic Operations ===")
-
 # Arithmetic
 result_add = 10 + 5    # 15
 result_sub = 10 - 3    # 7
@@ -76,8 +74,6 @@ print()
 # =============================================================================
 # 3. CONTROL FLOW
 # =============================================================================
-
-print("=== Control Flow ===")
 
 # If statements
 score = 85
@@ -134,7 +130,6 @@ def analyze_data(data_list):
         "max": max(data_list)
     }
 
-print("=== Functions ===")
 # Using functions
 message = greet("Alice")
 avg = calculate_average([10, 20, 30, 40])
@@ -151,7 +146,6 @@ print()
 # 5. WORKING WITH LISTS (Important for Data Analysis)
 # =============================================================================
 
-print("=== Working with Lists ===")
 data = [1, 5, 3, 9, 2, 8, 4]
 print(f"Original data: {data}")
 
@@ -176,8 +170,8 @@ print()
 # =============================================================================
 # 6. WORKING WITH DICTIONARIES
 # =============================================================================
+# These look like they are 1:1 aliases?
 
-print("=== Working with Dictionaries ===")
 sales_data = {
     "January": 1000,
     "February": 1200,
@@ -204,10 +198,9 @@ for month, sales in sales_data.items():
 print()
 
 # =============================================================================
-# 7. FILE HANDLING (Essential for Data Analysis)
+# 7. FILE HANDLING 
 # =============================================================================
 
-print("=== File Handling ===")
 
 # Writing a sample data file
 sample_csv_data = """Name,Age,City,Salary
@@ -239,8 +232,6 @@ print()
 # 8. ERROR HANDLING
 # =============================================================================
 
-print("=== Error Handling ===")
-
 def safe_divide(a, b):
     """Safely divide two numbers with error handling"""
     try:
@@ -265,8 +256,6 @@ print()
 # =============================================================================
 # 9. PRACTICAL DATA ANALYSIS EXAMPLE
 # =============================================================================
-
-print("=== Practical Data Analysis Example ===")
 
 # Sample dataset: student grades
 students_data = [
@@ -312,4 +301,21 @@ for subject, avg in subject_avgs.items():
 
 # Find top performer
 top_student = max(analyzed_data, key=lambda x: x["average"])
+# lambda is a Python keyword that creates anonymous functions.
+# lambda x: x["average"] creates an anonymous function that takes each student record (x) and returns their "average" field
+# equivalent to...
+# def get_average(x):
+#     return x["average"]
+# But lambda allows for this to be writing inline without defining a separate function
+# So instead of comparing the entire dictionary objects, max() compares just the average values
 print(f"\nTop performer: {top_student['name']} with average {top_student['average']:.1f}")
+
+# =============================================================================
+# 9. Managing Environment Variables
+# =============================================================================
+
+# shows all variable names in current scope
+dir()
+
+# returns dictionary of all local variables
+locals()

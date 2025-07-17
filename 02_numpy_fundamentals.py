@@ -1,4 +1,4 @@
-# 02 - NumPy Fundamentals for Data Analysis
+# 02 - NumPy Fundamentals
 # NumPy is the foundation of the Python data science ecosystem
 
 """
@@ -24,10 +24,6 @@ print(f"NumPy version: {np.__version__}")
 # 1. CREATING ARRAYS
 # =============================================================================
 
-print("="*50)
-print("1. CREATING ARRAYS")
-print("="*50)
-
 # From Python lists
 list_1d = [1, 2, 3, 4, 5]
 array_1d = np.array(list_1d)
@@ -36,8 +32,8 @@ print(f"Type: {type(array_1d)}")
 print(f"Data type: {array_1d.dtype}")
 
 # 2D array (matrix)
-list_2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
-array_2d = np.array(list_2d)
+array_2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
+# you don't have to first create another list object first!
 print(f"\n2D array:\n{array_2d}")
 print(f"Shape: {array_2d.shape}")
 print(f"Dimensions: {array_2d.ndim}")
@@ -46,7 +42,7 @@ print(f"Dimensions: {array_2d.ndim}")
 zeros = np.zeros((3, 4))  # 3x4 array of zeros
 ones = np.ones((2, 3))    # 2x3 array of ones
 empty = np.empty((2, 2))  # Uninitialized array
-full = np.full((2, 3), 7) # Array filled with 7
+full = np.full((2, 3), 7)  # Array filled with 7
 
 print(f"\nZeros array:\n{zeros}")
 print(f"\nOnes array:\n{ones}")
@@ -141,7 +137,8 @@ print("="*50)
 
 # Sample data for statistics
 np.random.seed(42)
-sample_data = np.random.normal(100, 15, 1000)  # Normal distribution, mean=100, std=15
+# Normal distribution, mean=100, std=15
+sample_data = np.random.normal(100, 15, 1000)
 
 print(f"Sample data (first 10): {sample_data[:10]}")
 print(f"\nBasic statistics:")
@@ -279,10 +276,14 @@ best_month_idx = np.argmax(monthly_totals)
 worst_month_idx = np.argmin(monthly_totals)
 
 print(f"\nPerformance Summary:")
-print(f"Best product: {products[best_product_idx]} (${product_totals[best_product_idx]:,})")
-print(f"Worst product: {products[worst_product_idx]} (${product_totals[worst_product_idx]:,})")
-print(f"Best month: {months[best_month_idx]} (${monthly_totals[best_month_idx]:,})")
-print(f"Worst month: {months[worst_month_idx]} (${monthly_totals[worst_month_idx]:,})")
+print(
+    f"Best product: {products[best_product_idx]} (${product_totals[best_product_idx]:,})")
+print(
+    f"Worst product: {products[worst_product_idx]} (${product_totals[worst_product_idx]:,})")
+print(
+    f"Best month: {months[best_month_idx]} (${monthly_totals[best_month_idx]:,})")
+print(
+    f"Worst month: {months[worst_month_idx]} (${monthly_totals[worst_month_idx]:,})")
 
 # Statistics
 print(f"\nOverall Statistics:")
