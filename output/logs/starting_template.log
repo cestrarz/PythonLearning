@@ -1,0 +1,7 @@
+2025-07-18 18:53:02,672 - root - INFO - Starting script
+2025-07-18 18:53:02,676 - STDOUT - INFO -       Name  Age      City  Salary
+2025-07-18 18:53:02,676 - STDOUT - INFO - 0    Alice   25  New York   50000
+2025-07-18 18:53:02,676 - STDOUT - INFO - 1      Bob   30    Boston   60000
+2025-07-18 18:53:02,676 - STDOUT - INFO - 2  Charlie   35   Chicago   55000
+2025-07-18 18:53:02,676 - STDOUT - INFO - 3    Diana   28    Denver   52000
+2025-07-18 18:53:02,676 - root - INFO - Script completed

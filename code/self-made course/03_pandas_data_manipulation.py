@@ -27,10 +27,6 @@ print(f"Pandas version: {pd.__version__}")
 # 1. CREATING DATAFRAMES AND SERIES
 # =============================================================================
 
-print("="*60)
-print("1. CREATING DATAFRAMES AND SERIES")
-print("="*60)
-
 # Creating a Series
 series_data = pd.Series([10, 20, 30, 40, 50], 
                        index=['A', 'B', 'C', 'D', 'E'])
