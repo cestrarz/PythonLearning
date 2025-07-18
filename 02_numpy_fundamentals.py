@@ -48,6 +48,7 @@ full = np.full((2, 3), 7)  # Array filled with 7
 
 print(f"\nZeros array:\n{zeros}")
 print(f"\nOnes array:\n{ones}")
+print(f"\nEmpty array:\n{empty}")
 print(f"\nFull array (7s):\n{full}")
 
 # Range arrays
@@ -60,7 +61,7 @@ print(f"Linspace array (0 to 1, 5 points): {linspace_array}")
 # Random arrays
 np.random.seed(42)  # For reproducible results
 random_array = np.random.random((2, 3))  # Random floats 0-1
-random_int = np.random.randint(1, 10, size=(2, 3))  # Random integers
+random_int = np.random.randint(1, 10, size=(2, 3))  # Random integers between 1 and 10 -- does NOT include 10, but includes 1
 
 print(f"\nRandom floats:\n{random_array}")
 print(f"\nRandom integers:\n{random_int}")
@@ -68,10 +69,6 @@ print(f"\nRandom integers:\n{random_int}")
 # =============================================================================
 # 2. ARRAY PROPERTIES AND INDEXING
 # =============================================================================
-
-print("\n" + "="*50)
-print("2. ARRAY PROPERTIES AND INDEXING")
-print("="*50)
 
 data = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
 print(f"Sample array:\n{data}")
@@ -99,10 +96,6 @@ print(f"\nRows 0 and 2:\n{data[indices]}")
 # =============================================================================
 # 3. ARRAY OPERATIONS
 # =============================================================================
-
-print("\n" + "="*50)
-print("3. ARRAY OPERATIONS")
-print("="*50)
 
 a = np.array([1, 2, 3, 4])
 b = np.array([5, 6, 7, 8])
@@ -133,18 +126,14 @@ print(f"Sine: np.sin(a) = {np.sin(a)}")
 # 4. STATISTICAL OPERATIONS
 # =============================================================================
 
-print("\n" + "="*50)
-print("4. STATISTICAL OPERATIONS")
-print("="*50)
-
 # Sample data for statistics
 np.random.seed(42)
-# Normal distribution, mean=100, std=15
+# Normal distribution, mean=100, std=15, 1000 observations
 sample_data = np.random.normal(100, 15, 1000)
 
 print(f"Sample data (first 10): {sample_data[:10]}")
 print(f"\nBasic statistics:")
-print(f"Mean: {np.mean(sample_data):.2f}")
+print(f"Mean: {np.mean(sample_data):.2f}") #.2f means 2 decimal places
 print(f"Median: {np.median(sample_data):.2f}")
 print(f"Standard deviation: {np.std(sample_data):.2f}")
 print(f"Variance: {np.var(sample_data):.2f}")
@@ -160,16 +149,12 @@ print(f"75th percentile: {np.percentile(sample_data, 75):.2f}")
 matrix = np.random.randint(1, 10, (3, 4))
 print(f"\nMatrix for axis operations:\n{matrix}")
 print(f"Sum of all elements: {np.sum(matrix)}")
-print(f"Sum along axis 0 (columns): {np.sum(matrix, axis=0)}")
-print(f"Sum along axis 1 (rows): {np.sum(matrix, axis=1)}")
+print(f"Sum along axis 0 (columns): {np.sum(matrix, axis=0)}") # its so weird that columns are axis 0
+print(f"Sum along axis 1 (rows): {np.sum(matrix, axis=1)}") # think of axis as the dimension that gets collapsed!
 
 # =============================================================================
 # 5. ARRAY MANIPULATION
 # =============================================================================
-
-print("\n" + "="*50)
-print("5. ARRAY MANIPULATION")
-print("="*50)
 
 original = np.arange(12)
 print(f"Original array: {original}")
@@ -206,10 +191,6 @@ print(f"Split array: {split_arrays}")
 # 6. BROADCASTING
 # =============================================================================
 
-print("\n" + "="*50)
-print("6. BROADCASTING")
-print("="*50)
-
 # Broadcasting allows operations between arrays of different shapes
 matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 vector = np.array([10, 20, 30])
@@ -220,20 +201,23 @@ print(f"Vector: {vector}")
 # Add vector to each row of matrix
 result = matrix + vector
 print(f"Matrix + vector (broadcast):\n{result}")
+# the vector is added to each row of the matrix
 
 # Broadcasting with different shapes
 col_vector = np.array([[1], [2], [3]])
 print(f"\nColumn vector:\n{col_vector}")
 result2 = matrix + col_vector
 print(f"Matrix + column vector:\n{result2}")
+# the vector is added to each column of the matrix
+
+# Horizontal + Vertical vector operation
+what_happens = vector + col_vector
+print(f"Horizontal + Vertical vector operation:\n{what_happens}")
+# element i,j of the resulting matrix is the sum of elements i and j of vector and col_vector
 
 # =============================================================================
 # 7. PRACTICAL DATA ANALYSIS EXAMPLE
 # =============================================================================
-
-print("\n" + "="*50)
-print("7. PRACTICAL EXAMPLE: SALES DATA ANALYSIS")
-print("="*50)
 
 # Simulate monthly sales data for 4 products over 12 months
 np.random.seed(42)
@@ -292,14 +276,3 @@ print(f"\nOverall Statistics:")
 print(f"Total sales: ${np.sum(sales_data):,}")
 print(f"Average monthly sales: ${np.mean(monthly_totals):,.0f}")
 print(f"Standard deviation: ${np.std(sales_data):,.0f}")
-
-print("\n" + "="*70)
-print("NUMPY SUMMARY")
-print("="*70)
-print("✅ Arrays are faster and more memory efficient than Python lists")
-print("✅ Vectorized operations eliminate the need for explicit loops")
-print("✅ Broadcasting allows operations between different shaped arrays")
-print("✅ Rich set of mathematical and statistical functions")
-print("✅ Foundation for Pandas, Scikit-learn, and other libraries")
-print("\nNext: Move to file 03 - Pandas for data manipulation!")
-print("="*70)
