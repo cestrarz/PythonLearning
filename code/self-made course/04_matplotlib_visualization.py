@@ -26,15 +26,12 @@ from datetime import datetime, timedelta
 # Set style for better-looking plots
 plt.style.use('default')  # You can try 'seaborn', 'ggplot', etc.
 
-print(f"Matplotlib version: {plt.__version__}")
+# Matplotlib version check
+plt.__version__
 
 # =============================================================================
 # 1. BASIC PLOTTING
 # =============================================================================
-
-print("="*60)
-print("1. BASIC PLOTTING")
-print("="*60)
 
 # Simple line plot
 x = np.linspace(0, 10, 100)
@@ -65,15 +62,11 @@ plt.legend()
 plt.grid(True, alpha=0.3)
 plt.show()
 
-print("✅ Basic line plots created")
+# Basic line plots created
 
 # =============================================================================
 # 2. DIFFERENT PLOT TYPES
 # =============================================================================
-
-print("\n" + "="*60)
-print("2. DIFFERENT PLOT TYPES")
-print("="*60)
 
 # Create sample data
 np.random.seed(42)

@@ -40,16 +40,15 @@ warnings.filterwarnings('ignore')
 try:
     from stargazer.stargazer import Stargazer
     STARGAZER_AVAILABLE = True
-    print("✅ Stargazer available for LaTeX tables")
+    # Stargazer available for LaTeX tables
 except ImportError:
     STARGAZER_AVAILABLE = False
-    print("⚠️  Stargazer not available. Install with: pip install stargazer")
+    # Stargazer not available. Install with: pip install stargazer
 
 from tabulate import tabulate
 import re
 
-print("LaTeX Tables and Publication-Ready Output")
-print("="*50)
+# LaTeX Tables and Publication-Ready Output
 
 # =============================================================================
 # 1. SAMPLE DATA GENERATION

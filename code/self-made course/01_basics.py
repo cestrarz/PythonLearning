@@ -30,12 +30,11 @@ person = {
     "city": "Boston"
 }
 
-print("=== Variables and Data Types ===")
-print(f"Age: {age}, Price: {price}")
-print(f"Name: {name}, City: {city}")
-print(f"Numbers: {numbers}")
-print(f"Person: {person}")
-print()
+# Variables and Data Types
+# Age: 25, Price: 19.99
+# Name: Alice, City: New York
+# Numbers: [1, 2, 3, 4, 5]
+# Person: {'name': 'John', 'age': 30, 'city': 'Boston'}
 
 # =============================================================================
 # 2. BASIC OPERATIONS
@@ -49,27 +48,21 @@ result_div = 15 / 3    # 5.0
 result_floor = 17 // 5 # 3 (floor division)
 result_mod = 17 % 5    # 2 (remainder)
 
-print(f"10 + 5 = {result_add}")
-print(f"10 - 3 = {result_sub}")
-print(f"4 * 6 = {result_mul}")
-print(f"15 / 3 = {result_div}")
-print(f"17 // 5 = {result_floor}")
-print(f"17 % 5 = {result_mod}")
+# Arithmetic results: 15, 7, 24, 5.0, 3, 2
 
 # String operations
 greeting = "Hello" + " " + "World"  # "Hello World"
 repeated = "Python " * 3            # "Python Python Python "
-print(f"Greeting: {greeting}")
-print(f"Repeated: {repeated}")
+# Greeting: Hello World
+# Repeated: Python Python Python 
 
 # List operations
 numbers.append(6)           # Add to end
 numbers.insert(0, 0)        # Insert at position
 first_item = numbers[0]     # Access by index
 last_item = numbers[-1]     # Negative indexing
-print(f"Modified numbers: {numbers}")
-print(f"First item: {first_item}, Last item: {last_item}")
-print()
+# Modified numbers: [0, 1, 2, 3, 4, 5, 6]
+# First item: 0, Last item: 6
 
 # =============================================================================
 # 3. CONTROL FLOW
@@ -84,24 +77,22 @@ elif score >= 80:
 else:
     grade = "C"
 
-print(f"Score: {score}, Grade: {grade}")
+# Score: 85, Grade: B
 
 # For loops
-print("Fruits I like:")
+# Fruits I like: apple, banana, orange
 for fruit in fruits:
-    print(f"  - {fruit}")
+    pass  # Loop through fruits
 
-print("Counting 0 to 4:")
+# Counting 0 to 4
 for i in range(5):  # 0, 1, 2, 3, 4
-    print(f"  {i}")
+    pass  # Count from 0 to 4
 
 # While loops
-print("While loop example:")
+# While loop example: count from 0 to 2
 count = 0
 while count < 3:
-    print(f"  Count: {count}")
     count += 1
-print()
 
 # =============================================================================
 # 4. FUNCTIONS
@@ -133,39 +124,37 @@ def analyze_data(data_list):
 # Using functions
 message = greet("Alice")
 avg = calculate_average([10, 20, 30, 40])
-print(f"Greeting: {message}")
-print(f"Average: {avg}")
+# Greeting: Hello, Alice!
+# Average: 25.0
 
 # Analyze some data
 sample_data = [1, 5, 3, 9, 2, 8, 4]
 stats = analyze_data(sample_data)
-print(f"Data analysis: {stats}")
-print()
+# Data analysis: {'count': 7, 'sum': 32, 'average': 4.57, 'min': 1, 'max': 9}
 
 # =============================================================================
 # 5. WORKING WITH LISTS (Important for Data Analysis)
 # =============================================================================
 
 data = [1, 5, 3, 9, 2, 8, 4]
-print(f"Original data: {data}")
+# Original data: [1, 5, 3, 9, 2, 8, 4]
 
 # List comprehensions (very useful!)
 squared = [x**2 for x in data]           # [1, 25, 9, 81, 4, 64, 16]
 evens = [x for x in data if x % 2 == 0]  # [2, 8, 4]
-print(f"Squared: {squared}")
-print(f"Even numbers: {evens}")
+# Squared: [1, 25, 9, 81, 4, 64, 16]
+# Even numbers: [2, 8, 4]
 
 # Built-in functions
 total = sum(data)        # 32
 maximum = max(data)      # 9
 minimum = min(data)      # 1
 length = len(data)       # 7
-print(f"Sum: {total}, Max: {maximum}, Min: {minimum}, Length: {length}")
+# Sum: 32, Max: 9, Min: 1, Length: 7
 
 # Sorting
 sorted_data = sorted(data)  # [1, 2, 3, 4, 5, 8, 9]
-print(f"Sorted data: {sorted_data}")
-print()
+# Sorted data: [1, 2, 3, 4, 5, 8, 9]
 
 # =============================================================================
 # 6. WORKING WITH DICTIONARIES
@@ -178,24 +167,23 @@ sales_data = {
     "March": 900
 }
 
-print(f"Original sales data: {sales_data}")
+# Original sales data: {'January': 1000, 'February': 1200, 'March': 900}
 
 # Accessing values
 jan_sales = sales_data["January"]
 feb_sales = sales_data.get("February", 0)  # Safer way
-print(f"January sales: {jan_sales}")
-print(f"February sales: {feb_sales}")
+# January sales: 1000
+# February sales: 1200
 
 # Adding/updating
 sales_data["April"] = 1100
 sales_data.update({"May": 1300, "June": 1150})
-print(f"Updated sales data: {sales_data}")
+# Updated sales data includes April, May, June
 
 # Iterating
-print("Monthly sales:")
+# Monthly sales: iterate through all months and values
 for month, sales in sales_data.items():
-    print(f"  {month}: ${sales}")
-print()
+    pass  # Process each month's sales
 
 # =============================================================================
 # 7. FILE HANDLING 
@@ -212,21 +200,18 @@ Diana,28,Denver,52000"""
 # Write sample data to file
 with open("sample_data.csv", "w") as file:
     file.write(sample_csv_data)
-print("Created sample_data.csv")
+# Created sample_data.csv
 
 # Reading the file back
 with open("sample_data.csv", "r") as file:
     content = file.read()
-    print("File content:")
-    print(content)
+    # File content: CSV data with headers and 4 rows
 
 # Reading line by line
-print("\nReading line by line:")
 with open("sample_data.csv", "r") as file:
     lines = file.readlines()
     for i, line in enumerate(lines):
-        print(f"Line {i+1}: {line.strip()}")
-print()
+        pass  # Process each line
 
 # =============================================================================
 # 8. ERROR HANDLING
@@ -248,10 +233,9 @@ def safe_divide(a, b):
         return None
 
 # Test error handling
-print(f"10 / 2 = {safe_divide(10, 2)}")
-print(f"10 / 0 = {safe_divide(10, 0)}")
-print(f"'10' / 2 = {safe_divide('10', 2)}")
-print()
+result1 = safe_divide(10, 2)    # Returns 5.0
+result2 = safe_divide(10, 0)    # Returns None, prints error
+result3 = safe_divide('10', 2)  # Returns None, prints error
 
 # =============================================================================
 # 9. PRACTICAL DATA ANALYSIS EXAMPLE
@@ -289,15 +273,15 @@ def analyze_student_data(data):
 # Analyze the data
 analyzed_data, subject_avgs = analyze_student_data(students_data)
 
-print("Student Performance Analysis:")
-print("-" * 50)
+# Student Performance Analysis
+# Display each student's grades and average
 for student in analyzed_data:
-    print(f"{student['name']}: Math={student['math']}, Science={student['science']}, "
-          f"English={student['english']}, Average={student['average']:.1f}")
+    pass  # Show student performance data
 
-print(f"\nSubject Averages:")
+# Subject Averages
+# Display average for each subject
 for subject, avg in subject_avgs.items():
-    print(f"  {subject.capitalize()}: {avg:.1f}")
+    pass  # Show subject averages
 
 # Find top performer
 top_student = max(analyzed_data, key=lambda x: x["average"])
@@ -308,14 +292,14 @@ top_student = max(analyzed_data, key=lambda x: x["average"])
 #     return x["average"]
 # But lambda allows for this to be writing inline without defining a separate function
 # So instead of comparing the entire dictionary objects, max() compares just the average values
-print(f"\nTop performer: {top_student['name']} with average {top_student['average']:.1f}")
+# Top performer: student with highest average
 
 # =============================================================================
 # 9. Managing Environment Variables
 # =============================================================================
 
 # shows all variable names in current scope
-dir()
+all_variables = dir()
 
 # returns dictionary of all local variables
-locals()
+local_vars = locals()

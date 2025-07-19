@@ -37,16 +37,11 @@ import statsmodels.api as sm
 import statsmodels.formula.api as smf
 from statsmodels.tsa.stattools import adfuller
 
-print("Advanced Econometric Methods")
-print("="*50)
+# Advanced Econometric Methods
 
 # =============================================================================
 # 1. REGRESSION DISCONTINUITY DESIGN (RDD)
 # =============================================================================
-
-print("\n" + "="*60)
-print("1. REGRESSION DISCONTINUITY DESIGN (RDD)")
-print("="*60)
 
 def generate_rdd_data(n=2000, cutoff=0, seed=42):
     """Generate data for RDD example"""
@@ -77,7 +72,7 @@ def generate_rdd_data(n=2000, cutoff=0, seed=42):
 rdd_data = generate_rdd_data(n=2000, cutoff=0)
 cutoff = 0
 
-print("RDD Data Summary:")
+# RDD Data Summary: 2000 observations with running variable, treatment, and outcome
 print(rdd_data.describe())
 print(f"\nTreatment assignment:")
 print(rdd_data['treatment'].value_counts())

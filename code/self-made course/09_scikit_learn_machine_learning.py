@@ -44,40 +44,33 @@ from sklearn.pipeline import Pipeline
 import warnings
 warnings.filterwarnings('ignore')
 
-print(f"Scikit-learn version: {sklearn.__version__}")
+# Scikit-learn version check
+import sklearn
+sklearn.__version__
 
 # =============================================================================
 # 1. DATA LOADING AND EXPLORATION
 # =============================================================================
-
-print("="*60)
-print("1. DATA LOADING AND EXPLORATION")
-print("="*60)
 
 # Load built-in datasets
 iris = datasets.load_iris()
 boston = datasets.load_boston()
 wine = datasets.load_wine()
 
-print("Available built-in datasets:")
-print("- Iris: Classification (flower species)")
-print("- Boston Housing: Regression (house prices)")
-print("- Wine: Classification (wine quality)")
+# Available built-in datasets:
+# - Iris: Classification (flower species)
+# - Boston Housing: Regression (house prices)
+# - Wine: Classification (wine quality)
 
 # Create DataFrame for easier handling
 iris_df = pd.DataFrame(iris.data, columns=iris.feature_names)
 iris_df['target'] = iris.target
 iris_df['species'] = iris_df['target'].map({0: 'setosa', 1: 'versicolor', 2: 'virginica'})
 
-print(f"\nIris dataset shape: {iris_df.shape}")
-print("First few rows:")
-print(iris_df.head())
-
-print(f"\nTarget distribution:")
-print(iris_df['species'].value_counts())
-
-# Basic statistics
-print(f"\nBasic statistics:")
+# Iris dataset shape: (150, 6)
+# First few rows: 5 rows with sepal/petal measurements and species
+# Target distribution: 50 samples each of setosa, versicolor, virginica
+# Basic statistics: mean, std, min, max for each feature
 print(iris_df.describe())
 
 # Visualize the data

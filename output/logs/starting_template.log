@@ -1,36 +1,36 @@
-2025-07-19 00:40:37,316 - INFO - ==================================================
-2025-07-19 00:40:37,316 - INFO - AUTOMATIC LOGGING INITIALIZED - starting_template.log
-2025-07-19 00:40:37,316 - INFO - ==================================================
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L5] np.random.seed(42)
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L17] log_dir=PERSONAL/"output/logs")
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L22] sample_data = pd.read_csv(DATA/"sample_data.csv")
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L23] print(sample_data.head())
-2025-07-19 00:40:37,319 - INFO - [STDOUT] Name  Age      City  Salary
-2025-07-19 00:40:37,319 - INFO - [STDOUT] 0    Alice   25  New York   50000
-2025-07-19 00:40:37,319 - INFO - [STDOUT] 1      Bob   30    Boston   60000
-2025-07-19 00:40:37,319 - INFO - [STDOUT] 2  Charlie   35   Chicago   55000
-2025-07-19 00:40:37,319 - INFO - [STDOUT] 3    Diana   28    Denver   52000
-2025-07-19 00:40:37,319 - INFO - [LOOP BLOCK:L25-29]
-2025-07-19 00:40:37,319 - INFO -   for i in range(5):
-2025-07-19 00:40:37,319 - INFO -       if i % 2 == 0:
-2025-07-19 00:40:37,319 - INFO -           print(f"{i} is EVEN")
-2025-07-19 00:40:37,319 - INFO -       else:
-2025-07-19 00:40:37,319 - INFO -           print(f"{i} is ODD")
-2025-07-19 00:40:37,319 - INFO - [/LOOP BLOCK]
-2025-07-19 00:40:37,319 - INFO - [STDOUT] 0 is EVEN
-2025-07-19 00:40:37,319 - INFO - [STDOUT] 1 is ODD
-2025-07-19 00:40:37,319 - INFO - [STDOUT] 2 is EVEN
-2025-07-19 00:40:37,319 - INFO - [STDOUT] 3 is ODD
-2025-07-19 00:40:37,319 - INFO - [STDOUT] 4 is EVEN
-2025-07-19 00:40:37,319 - INFO - [FUNCTION BLOCK:L32-33]
-2025-07-19 00:40:37,319 - INFO -   def scream():
-2025-07-19 00:40:37,319 - INFO -       print("AAAAH")
-2025-07-19 00:40:37,319 - INFO - [/FUNCTION BLOCK]
-2025-07-19 00:40:37,319 - INFO - [STDOUT] AAAAH
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L36] scream()
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L39] rands = [1, 23, 22]
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L40] rand0 = rands.append(3)
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L41] newarray = np.array(rands)
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L42] newarray += 1
-2025-07-19 00:40:37,319 - INFO - [COMMAND:L43] print(newarray)
-2025-07-19 00:40:37,319 - INFO - [STDOUT] [ 2 24 23  4]
+2025-07-19 13:17:12,315 - INFO - ==================================================
+2025-07-19 13:17:12,315 - INFO - AUTOMATIC LOGGING INITIALIZED - starting_template.log
+2025-07-19 13:17:12,315 - INFO - ==================================================
+2025-07-19 13:17:12,318 - INFO - [COMMAND:L5] np.random.seed(42)
+2025-07-19 13:17:12,318 - INFO - [COMMAND:L17] log_dir=PERSONAL/"output/logs")
+2025-07-19 13:17:12,318 - INFO - [COMMAND:L22] sample_data = pd.read_csv(DATA/"sample_data.csv")
+2025-07-19 13:17:12,318 - INFO - [COMMAND:L23] print(sample_data.head())
+2025-07-19 13:17:12,319 - INFO - [STDOUT] Name  Age      City  Salary
+2025-07-19 13:17:12,319 - INFO - [STDOUT] 0    Alice   25  New York   50000
+2025-07-19 13:17:12,319 - INFO - [STDOUT] 1      Bob   30    Boston   60000
+2025-07-19 13:17:12,319 - INFO - [STDOUT] 2  Charlie   35   Chicago   55000
+2025-07-19 13:17:12,319 - INFO - [STDOUT] 3    Diana   28    Denver   52000
+2025-07-19 13:17:12,319 - INFO - [LOOP BLOCK:L25-29]
+2025-07-19 13:17:12,319 - INFO -   for i in range(5):
+2025-07-19 13:17:12,319 - INFO -       if i % 2 == 0:
+2025-07-19 13:17:12,319 - INFO -           print(f"{i} is EVEN")
+2025-07-19 13:17:12,319 - INFO -       else:
+2025-07-19 13:17:12,319 - INFO -           print(f"{i} is ODD")
+2025-07-19 13:17:12,319 - INFO - [/LOOP BLOCK]
+2025-07-19 13:17:12,319 - INFO - [STDOUT] 0 is EVEN
+2025-07-19 13:17:12,321 - INFO - [STDOUT] 1 is ODD
+2025-07-19 13:17:12,321 - INFO - [STDOUT] 2 is EVEN
+2025-07-19 13:17:12,321 - INFO - [STDOUT] 3 is ODD
+2025-07-19 13:17:12,321 - INFO - [STDOUT] 4 is EVEN
+2025-07-19 13:17:12,321 - INFO - [FUNCTION BLOCK:L32-33]
+2025-07-19 13:17:12,321 - INFO -   def scream():
+2025-07-19 13:17:12,321 - INFO -       print("AAAAH")
+2025-07-19 13:17:12,321 - INFO - [/FUNCTION BLOCK]
+2025-07-19 13:17:12,321 - INFO - [STDOUT] AAAAH
+2025-07-19 13:17:12,322 - INFO - [COMMAND:L36] scream()
+2025-07-19 13:17:12,322 - INFO - [COMMAND:L39] rands = [1, 23, 22]
+2025-07-19 13:17:12,322 - INFO - [COMMAND:L40] rand0 = rands.append(3)
+2025-07-19 13:17:12,322 - INFO - [COMMAND:L41] newarray = np.array(rands)
+2025-07-19 13:17:12,322 - INFO - [COMMAND:L42] newarray += 1
+2025-07-19 13:17:12,322 - INFO - [COMMAND:L43] print(newarray)
+2025-07-19 13:17:12,322 - INFO - [STDOUT] [ 2 24 23  4]

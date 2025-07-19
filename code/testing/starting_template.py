@@ -1,3 +1,7 @@
+'''
+In this file:
+
+'''
 import sys
 from pathlib import Path
 import pandas as pd
@@ -19,25 +23,3 @@ logger = start_logging(log_file="starting_template.log",
 ########################################################
 # MAIN SCRIPT 
 ########################################################
-sample_data = pd.read_csv(DATA/"sample_data.csv")
-print(sample_data.head())
-
-for i in range(5):
-    if i % 2 == 0:
-        print(f"{i} is EVEN")
-    else:
-        print(f"{i} is ODD")
-
-
-def scream():
-    print("AAAAH")
-
-
-scream()
-
-
-rands = [1, 23, 22]
-rand0 = rands.append(3)
-newarray = np.array(rands)
-newarray += 1
-print(newarray)

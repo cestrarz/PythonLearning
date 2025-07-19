@@ -43,7 +43,7 @@ try:
     from linearmodels.panel import compare
     LINEARMODELS_AVAILABLE = True
 except ImportError:
-    print("⚠️  linearmodels not available. Install with: pip install linearmodels")
+    # linearmodels not available. Install with: pip install linearmodels
     LINEARMODELS_AVAILABLE = False
 
 # LaTeX table generation
@@ -51,11 +51,10 @@ try:
     from stargazer.stargazer import Stargazer
     STARGAZER_AVAILABLE = True
 except ImportError:
-    print("⚠️  stargazer not available. Install with: pip install stargazer")
+    # stargazer not available. Install with: pip install stargazer
     STARGAZER_AVAILABLE = False
 
-print("Econometrics Fundamentals Module")
-print("="*50)
+# Econometrics Fundamentals Module
 
 # =============================================================================
 # 1. DATA GENERATION FOR ECONOMETRIC EXAMPLES

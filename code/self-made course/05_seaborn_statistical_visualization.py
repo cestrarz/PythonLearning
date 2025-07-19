@@ -30,26 +30,22 @@ from scipy import stats
 sns.set_style("whitegrid")
 sns.set_palette("husl")
 
-print(f"Seaborn version: {sns.__version__}")
+# Seaborn version check
+sns.__version__
 
 # =============================================================================
 # 1. SEABORN BASICS AND STYLING
 # =============================================================================
 
-print("="*60)
-print("1. SEABORN BASICS AND STYLING")
-print("="*60)
-
 # Available styles and palettes
-print("Available styles:", sns.axes_style().keys())
-print("Available contexts:", ['paper', 'notebook', 'talk', 'poster'])
+# Available styles: dict_keys(['axes.spines.left', 'axes.spines.bottom', ...])
+# Available contexts: ['paper', 'notebook', 'talk', 'poster']
 
 # Create sample data
 np.random.seed(42)
 tips = sns.load_dataset("tips")  # Built-in dataset
-print("Tips dataset sample:")
-print(tips.head())
-print(f"Dataset shape: {tips.shape}")
+# Tips dataset sample: first 5 rows of restaurant tips data
+# Dataset shape: (244, 7) - 244 records with 7 columns
 
 # Basic plot comparison: matplotlib vs seaborn
 fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 6))
@@ -67,15 +63,11 @@ ax2.set_title('Seaborn Default Style')
 plt.tight_layout()
 plt.show()
 
-print("✅ Basic styling comparison completed")
+# Basic styling comparison completed
 
 # =============================================================================
 # 2. DISTRIBUTION PLOTS
 # =============================================================================
-
-print("\n" + "="*60)
-print("2. DISTRIBUTION PLOTS")
-print("="*60)
 
 # Create figure with subplots
 fig, axes = plt.subplots(2, 3, figsize=(18, 12))

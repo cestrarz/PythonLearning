@@ -45,16 +45,13 @@ from functools import partial
 import psutil
 import os
 
-print(f"Number of CPU cores: {mp.cpu_count()}")
-print(f"Current process ID: {os.getpid()}")
+# Number of CPU cores and current process ID
+num_cores = mp.cpu_count()
+current_pid = os.getpid()
 
 # =============================================================================
 # 1. UNDERSTANDING THE GLOBAL INTERPRETER LOCK (GIL)
 # =============================================================================
-
-print("\n" + "="*60)
-print("1. UNDERSTANDING THE GLOBAL INTERPRETER LOCK (GIL)")
-print("="*60)
 
 def cpu_intensive_task(n):
     """CPU-intensive task to demonstrate GIL impact"""
@@ -69,13 +66,13 @@ def io_intensive_task(duration):
     return f"Task completed after {duration} seconds"
 
 # Measure sequential execution
-print("Sequential execution:")
+# Sequential execution timing
 start_time = time.time()
 results_sequential = []
 for i in range(4):
     results_sequential.append(cpu_intensive_task(1000000))
 sequential_time = time.time() - start_time
-print(f"Sequential CPU tasks: {sequential_time:.2f} seconds")
+# Sequential CPU tasks: ~X.XX seconds
 
 # Measure threading (limited by GIL for CPU-bound tasks)
 print("\nThreading execution (CPU-bound):")

@@ -20,7 +20,8 @@ Why NumPy?
 # change test for git
 
 import numpy as np
-print(f"NumPy version: {np.__version__}")
+# NumPy version check
+np.__version__
 
 # =============================================================================
 # 1. CREATING ARRAYS
@@ -29,16 +30,16 @@ print(f"NumPy version: {np.__version__}")
 # From Python lists
 list_1d = [1, 2, 3, 4, 5]
 array_1d = np.array(list_1d)
-print(f"1D array: {array_1d}")
-print(f"Type: {type(array_1d)}")
-print(f"Data type: {array_1d.dtype}")
+# 1D array: [1 2 3 4 5]
+# Type: <class 'numpy.ndarray'>
+# Data type: int64
 
 # 2D array (matrix)
 array_2d = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 # you don't have to first create another list object first!
-print(f"\n2D array:\n{array_2d}")
-print(f"Shape: {array_2d.shape}")
-print(f"Dimensions: {array_2d.ndim}")
+# 2D array: 3x3 matrix
+# Shape: (3, 3)
+# Dimensions: 2
 
 # Common array creation functions
 zeros = np.zeros((3, 4))  # 3x4 array of zeros
@@ -46,52 +47,52 @@ ones = np.ones((2, 3))    # 2x3 array of ones
 empty = np.empty((2, 2))  # Uninitialized array
 full = np.full((2, 3), 7)  # Array filled with 7
 
-print(f"\nZeros array:\n{zeros}")
-print(f"\nOnes array:\n{ones}")
-print(f"\nEmpty array:\n{empty}")
-print(f"\nFull array (7s):\n{full}")
+# Zeros array: 3x4 array of zeros
+# Ones array: 2x3 array of ones
+# Empty array: 2x2 uninitialized array
+# Full array (7s): 2x3 array filled with 7
 
 # Range arrays
 range_array = np.arange(0, 10, 2)  # Start, stop, step
 linspace_array = np.linspace(0, 1, 5)  # Start, stop, num_points
 
-print(f"\nRange array (0 to 10, step 2): {range_array}")
-print(f"Linspace array (0 to 1, 5 points): {linspace_array}")
+# Range array (0 to 10, step 2): [0 2 4 6 8]
+# Linspace array (0 to 1, 5 points): [0. 0.25 0.5 0.75 1.]
 
 # Random arrays
 np.random.seed(42)  # For reproducible results
 random_array = np.random.random((2, 3))  # Random floats 0-1
 random_int = np.random.randint(1, 10, size=(2, 3))  # Random integers between 1 and 10 -- does NOT include 10, but includes 1
 
-print(f"\nRandom floats:\n{random_array}")
-print(f"\nRandom integers:\n{random_int}")
+# Random floats: 2x3 array of random floats between 0-1
+# Random integers: 2x3 array of random integers between 1-9
 
 # =============================================================================
 # 2. ARRAY PROPERTIES AND INDEXING
 # =============================================================================
 
 data = np.array([[1, 2, 3, 4], [5, 6, 7, 8], [9, 10, 11, 12]])
-print(f"Sample array:\n{data}")
-print(f"Shape: {data.shape}")
-print(f"Size (total elements): {data.size}")
-print(f"Data type: {data.dtype}")
-print(f"Memory usage: {data.nbytes} bytes")
+# Sample array: 3x4 matrix with values 1-12
+# Shape: (3, 4)
+# Size (total elements): 12
+# Data type: int64
+# Memory usage: 96 bytes
 
 # Indexing (similar to Python lists but more powerful)
-print(f"\nFirst element: {data[0, 0]}")
-print(f"Last element: {data[-1, -1]}")
-print(f"First row: {data[0]}")
-print(f"First column: {data[:, 0]}")
-print(f"Subarray (first 2 rows, first 2 cols):\n{data[:2, :2]}")
+first_element = data[0, 0]      # First element: 1
+last_element = data[-1, -1]     # Last element: 12
+first_row = data[0]             # First row: [1 2 3 4]
+first_column = data[:, 0]       # First column: [1 5 9]
+subarray = data[:2, :2]         # Subarray (first 2 rows, first 2 cols): 2x2
 
 # Boolean indexing (very powerful!)
 mask = data > 6
-print(f"\nBoolean mask (elements > 6):\n{mask}")
-print(f"Elements > 6: {data[mask]}")
+# Boolean mask (elements > 6): True/False array
+elements_gt_6 = data[mask]      # Elements > 6: [7 8 9 10 11 12]
 
 # Fancy indexing
 indices = [0, 2]  # Select rows 0 and 2
-print(f"\nRows 0 and 2:\n{data[indices]}")
+selected_rows = data[indices]   # Rows 0 and 2: first and third rows
 
 # =============================================================================
 # 3. ARRAY OPERATIONS
@@ -100,27 +101,27 @@ print(f"\nRows 0 and 2:\n{data[indices]}")
 a = np.array([1, 2, 3, 4])
 b = np.array([5, 6, 7, 8])
 
-print(f"Array a: {a}")
-print(f"Array b: {b}")
+# Array a: [1 2 3 4]
+# Array b: [5 6 7 8]
 
 # Element-wise operations
-print(f"\nAddition: a + b = {a + b}")
-print(f"Subtraction: a - b = {a - b}")
-print(f"Multiplication: a * b = {a * b}")
-print(f"Division: a / b = {a / b}")
-print(f"Power: a ** 2 = {a ** 2}")
+addition = a + b        # Addition: [6 8 10 12]
+subtraction = a - b     # Subtraction: [-4 -4 -4 -4]
+multiplication = a * b  # Multiplication: [5 12 21 32]
+division = a / b        # Division: [0.2 0.33 0.43 0.5]
+power = a ** 2          # Power: [1 4 9 16]
 
 # Operations with scalars (broadcasting)
-print(f"\nScalar operations:")
-print(f"a + 10 = {a + 10}")
-print(f"a * 2 = {a * 2}")
+# Scalar operations
+scalar_add = a + 10     # a + 10 = [11 12 13 14]
+scalar_mult = a * 2     # a * 2 = [2 4 6 8]
 
 # Mathematical functions
-print(f"\nMath functions:")
-print(f"Square root: np.sqrt(a) = {np.sqrt(a)}")
-print(f"Exponential: np.exp(a) = {np.exp(a)}")
-print(f"Logarithm: np.log(a) = {np.log(a)}")
-print(f"Sine: np.sin(a) = {np.sin(a)}")
+# Math functions
+sqrt_a = np.sqrt(a)     # Square root: [1. 1.41 1.73 2.]
+exp_a = np.exp(a)       # Exponential: [2.72 7.39 20.09 54.6]
+log_a = np.log(a)       # Logarithm: [0. 0.69 1.1 1.39]
+sin_a = np.sin(a)       # Sine: [0.84 0.91 0.14 -0.76]
 
 # =============================================================================
 # 4. STATISTICAL OPERATIONS
@@ -131,61 +132,60 @@ np.random.seed(42)
 # Normal distribution, mean=100, std=15, 1000 observations
 sample_data = np.random.normal(100, 15, 1000)
 
-print(f"Sample data (first 10): {sample_data[:10]}")
-print(f"\nBasic statistics:")
-print(f"Mean: {np.mean(sample_data):.2f}") #.2f means 2 decimal places
-print(f"Median: {np.median(sample_data):.2f}")
-print(f"Standard deviation: {np.std(sample_data):.2f}")
-print(f"Variance: {np.var(sample_data):.2f}")
-print(f"Min: {np.min(sample_data):.2f}")
-print(f"Max: {np.max(sample_data):.2f}")
+# Sample data (first 10): array of 10 random values around 100
+# Basic statistics
+mean_val = np.mean(sample_data)         # Mean: ~100.0
+median_val = np.median(sample_data)     # Median: ~100.0
+std_val = np.std(sample_data)           # Standard deviation: ~15.0
+var_val = np.var(sample_data)           # Variance: ~225.0
+min_val = np.min(sample_data)           # Min: ~50-60
+max_val = np.max(sample_data)           # Max: ~140-150
 
 # Percentiles
-print(f"\nPercentiles:")
-print(f"25th percentile: {np.percentile(sample_data, 25):.2f}")
-print(f"75th percentile: {np.percentile(sample_data, 75):.2f}")
+percentile_25 = np.percentile(sample_data, 25)  # 25th percentile: ~90
+percentile_75 = np.percentile(sample_data, 75)  # 75th percentile: ~110
 
 # 2D array statistics
 matrix = np.random.randint(1, 10, (3, 4))
-print(f"\nMatrix for axis operations:\n{matrix}")
-print(f"Sum of all elements: {np.sum(matrix)}")
-print(f"Sum along axis 0 (columns): {np.sum(matrix, axis=0)}") # its so weird that columns are axis 0
-print(f"Sum along axis 1 (rows): {np.sum(matrix, axis=1)}") # think of axis as the dimension that gets collapsed!
+# Matrix for axis operations: 3x4 matrix with random integers 1-9
+sum_all = np.sum(matrix)                # Sum of all elements
+sum_cols = np.sum(matrix, axis=0)       # Sum along axis 0 (columns) - its so weird that columns are axis 0
+sum_rows = np.sum(matrix, axis=1)       # Sum along axis 1 (rows) - think of axis as the dimension that gets collapsed!
 
 # =============================================================================
 # 5. ARRAY MANIPULATION
 # =============================================================================
 
 original = np.arange(12)
-print(f"Original array: {original}")
+# Original array: [0 1 2 3 4 5 6 7 8 9 10 11]
 
 # Reshaping
 reshaped = original.reshape(3, 4)
-print(f"Reshaped to 3x4:\n{reshaped}")
+# Reshaped to 3x4: 3x4 matrix with values 0-11
 
 # Flattening
 flattened = reshaped.flatten()
-print(f"Flattened: {flattened}")
+# Flattened: [0 1 2 3 4 5 6 7 8 9 10 11]
 
 # Transposing
 transposed = reshaped.T
-print(f"Transposed:\n{transposed}")
+# Transposed: 4x3 matrix (transposed version)
 
 # Concatenation
 arr1 = np.array([1, 2, 3])
 arr2 = np.array([4, 5, 6])
 concatenated = np.concatenate([arr1, arr2])
-print(f"\nConcatenated arrays: {concatenated}")
+# Concatenated arrays: [1 2 3 4 5 6]
 
 # Stacking
 stacked_v = np.vstack([arr1, arr2])  # Vertical stack
 stacked_h = np.hstack([arr1, arr2])  # Horizontal stack
-print(f"Vertical stack:\n{stacked_v}")
-print(f"Horizontal stack: {stacked_h}")
+# Vertical stack: 2x3 matrix (rows stacked)
+# Horizontal stack: [1 2 3 4 5 6]
 
 # Splitting
 split_arrays = np.split(concatenated, 2)
-print(f"Split array: {split_arrays}")
+# Split array: [array([1, 2, 3]), array([4, 5, 6])]
 
 # =============================================================================
 # 6. BROADCASTING
@@ -195,25 +195,22 @@ print(f"Split array: {split_arrays}")
 matrix = np.array([[1, 2, 3], [4, 5, 6], [7, 8, 9]])
 vector = np.array([10, 20, 30])
 
-print(f"Matrix:\n{matrix}")
-print(f"Vector: {vector}")
+# Matrix: 3x3 matrix
+# Vector: [10 20 30]
 
 # Add vector to each row of matrix
 result = matrix + vector
-print(f"Matrix + vector (broadcast):\n{result}")
-# the vector is added to each row of the matrix
+# Matrix + vector (broadcast): vector added to each row of the matrix
 
 # Broadcasting with different shapes
 col_vector = np.array([[1], [2], [3]])
-print(f"\nColumn vector:\n{col_vector}")
+# Column vector: 3x1 column vector
 result2 = matrix + col_vector
-print(f"Matrix + column vector:\n{result2}")
-# the vector is added to each column of the matrix
+# Matrix + column vector: vector added to each column of the matrix
 
 # Horizontal + Vertical vector operation
 what_happens = vector + col_vector
-print(f"Horizontal + Vertical vector operation:\n{what_happens}")
-# element i,j of the resulting matrix is the sum of elements i and j of vector and col_vector
+# Horizontal + Vertical vector operation: element i,j of the resulting matrix is the sum of elements i and j of vector and col_vector
 
 # =============================================================================
 # 7. PRACTICAL DATA ANALYSIS EXAMPLE
