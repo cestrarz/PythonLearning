@@ -23,3 +23,7 @@ logger = start_logging(log_file="starting_template.log",
 ########################################################
 # MAIN SCRIPT 
 ########################################################
+
+var1 = [1,2,3,4,5]
+var2 = pd.DataFrame([var1, var1])
+print(var2)
